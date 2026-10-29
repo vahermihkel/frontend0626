@@ -9,7 +9,7 @@ function HomePage() {
 	const [totalElements, setTotalElements] = useState(0);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/products?page=${page}&size=${size}&sort=${sort}`)
+    fetch(import.meta.env.VITE_BACKEND_URL + `/products?page=${page}&size=${size}&sort=${sort}`)
       .then(res => res.json())
       .then(json => {
 				setProducts(json.content);
